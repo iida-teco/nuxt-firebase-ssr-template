@@ -1,0 +1,24 @@
+{
+  "name": "nuxt-firebase-ssr-template",
+  "version": "1.0.0",
+  "description": "My sublime Nuxt.js project",
+  "author": "",
+  "private": true,
+  "scripts": {
+    "setup": "yarn && cd functions && yarn && cd ..",
+    "dev": "nuxt dev",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "build": "nuxt build && yarn build:copy",
+    "build:copy": "rimraf public/* && cpx \"functions/nuxt/dist/**/*\" public/assets/ && cpx \"app/static/*\" public/",
+    "serve": "firebase serve --host 0.0.0.0",
+    "deploy": "firebase deploy"
+  },
+  "dependencies": {
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {
+    "cpx": "^1.5.0",
+    "rimraf": "^2.6.2"
+  }
+}
